@@ -68,4 +68,4 @@ Type `done` at any point in the search prompt to return to the main menu.
 
 ## Author
 
-Kolluri Bhanuteja — B.Tech ECE, Andhra Loyola College
+Kolluri Bhanuteja — B.Tech ECE
