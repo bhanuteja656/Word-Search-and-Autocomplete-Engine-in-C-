@@ -5,12 +5,6 @@ you search words, autocomplete by prefix, and track search history —
 built in C as a mini-project to apply data structures beyond the
 basics (hash tables, tries, linked lists).
 
-## Notes
-
-- Both program output and user input are logged to `session_log.txt`
-  for the full session, using `popen`/`dup2`/`tee` for output and
-  explicit echoing inside `get_str`/`get_int` for input.
-
 ## Features
 
 - **Hash table** — O(1) exact word lookup with collision chaining
@@ -21,9 +15,8 @@ basics (hash tables, tries, linked lists).
 - **Multi-file support** — load one or more dictionary files, or add
   more files mid-session
 - **Timing** — measures how long insertion/search operations take
-- **Session logging — both program output and user input are saved to
-  `session_log.txt`, giving a full transcript of each run
-
+- **Session logging** — both program output and user input are saved
+  to `session_log.txt`, giving a full transcript of each run
 
 ## File structure
 
@@ -39,34 +32,34 @@ basics (hash tables, tries, linked lists).
 
 ## Build & run
 
-```
+\`\`\`
 make
 ./run words.txt
-```
+\`\`\`
 
 You can also load multiple files at once:
-```
+\`\`\`
 ./run words.txt words2.txt
-```
+\`\`\`
 
 ## Menu
 
-```
+\`\`\`
 1. Search
 2. Enter new file
 3. History (recent searches / most frequent)
 4. All strings (print full table)
 5. Advanced search (prefix / autocomplete)
 6. Exit
-```
+\`\`\`
 
 Type `done` at any point in the search prompt to return to the main menu.
 
 ## Notes
 
-- The output-logging technique (`popen`/`dup2`/`tee`) was adapted from
-  research rather than being my own original idea — implementation
-  adjusted to fit this project.
+- Session logging (program output + user input) uses `popen`/`dup2`/`tee`
+  — this technique was adapted from research rather than being my own
+  original idea, implementation adjusted to fit this project.
 - Hash function buckets words by first letter (A–Z); collisions are
   chained and kept sorted within each bucket.
 - This project was built incrementally while learning pointers,
