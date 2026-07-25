@@ -5,6 +5,12 @@ you search words, autocomplete by prefix, and track search history —
 built in C as a mini-project to apply data structures beyond the
 basics (hash tables, tries, linked lists).
 
+## Notes
+
+- Both program output and user input are logged to `session_log.txt`
+  for the full session, using `popen`/`dup2`/`tee` for output and
+  explicit echoing inside `get_str`/`get_int` for input.
+
 ## Features
 
 - **Hash table** — O(1) exact word lookup with collision chaining
@@ -15,7 +21,9 @@ basics (hash tables, tries, linked lists).
 - **Multi-file support** — load one or more dictionary files, or add
   more files mid-session
 - **Timing** — measures how long insertion/search operations take
-- **Session logging** — program output is duplicated to `session_log.txt`
+- **Session logging — both program output and user input are saved to
+  `session_log.txt`, giving a full transcript of each run
+
 
 ## File structure
 
